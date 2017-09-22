@@ -1,0 +1,79 @@
+* {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: lightgray;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0 -20px 0;
+    font-weight: 300;
+}
+
+.grid-wrap {
+    height: 600px;
+    width: 600px;
+}
+
+#container {
+    top: 30px;
+    font-size: 0;
+    margin: 30px auto;
+    height: 600px;
+    width: 600px;
+    padding: 0;
+    border: aqua solid 2px;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 70, 150, 0.7);
+}
+
+.grid {
+    float: left;
+    margin: 0;
+	padding: 0;
+	border: none;
+    border-radius: 5px;
+    opacity: 0;
+    background-color: black;
+}
+
+#reset {
+    margin-top: 50px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: aqua;
+    border-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#reset:focus {
+    outline: none;
+}
+
+.grid-size {
+    justify-content: center;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -10px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+footer > p {
+    margin-bottom: 10px;
+}
+
+footer > p > a {
+    color: dodgerblue;
+}
