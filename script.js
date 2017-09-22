@@ -1,17 +1,23 @@
 $(document).ready(function() {
-
+    
+    var timer;
+    
 	createGrid(16);
+    dance();
+    
 
   $('#reset').on('click', function() {
   	var z = prompt("How many squares per side?");
     clearGrid();
     createGrid(z);
-    
-    $('.grid').mouseover(function() {
-  		$(this).css("opacity", "+=0.15");
-  	});
   });
   
+  function color() {
+      $('.grid').mouseover(function() {
+  		  $(this).css("opacity", "+=0.15");
+  	  });
+  }
+    
   function createGrid(x) {
   	for (var rows = 0; rows < x; rows++) {
     	for (var columns = 0; columns < x; columns++) {
@@ -23,14 +29,37 @@ $(document).ready(function() {
       
     $('.grid-size').text('Grid size: ' + x + 'x' + x);
       
+    color();
+      
   }
   
   function clearGrid() {
   	$('.grid').remove();
+      stopDance();
   }
-  
-  $('.grid').mouseover(function() {
-  	$(this).css('background-color', 'black');
-  });
+    
+    function startDance(){
+        timer = setInterval(function(){
+            $('.grid').each(function(){
+                $(this).css("background-color", '#' + Math.floor(Math.random()*16777215).toString(16));
+                });
+        }, 150)
+    }
+
+    function stopDance(){
+        clearInterval(timer);
+        timer = 0;
+    }
+
+    function dance(){
+        $('#dance').click(function(){
+            $('.grid').css("opacity", 1);
+            if (timer == 0){
+                startDance();
+            } else {
+                stopDance();
+            } 
+        })
+    }
 
 });

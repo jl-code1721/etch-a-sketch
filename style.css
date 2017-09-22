@@ -25,10 +25,10 @@ h1 {
     height: 600px;
     width: 600px;
     padding: 0;
-    border: aqua solid 2px;
+    border: aqua solid 1px;
     background-color: #eee;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 70, 150, 0.7);
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.7);
 }
 
 .grid {
@@ -46,11 +46,24 @@ h1 {
     padding: 20px 40px;
     border-radius: 10px;
     background-color: aqua;
-    border-color: white;
+    border-color: lightgray;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 #reset:focus {
+    outline: none;
+}
+
+#dance {
+    margin-top: 20px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: aqua;
+    border-color: lightgray;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#dance:focus {
     outline: none;
 }
 
@@ -61,6 +74,7 @@ h1 {
     font-weight: bold;
     width: 100%;
     margin-top: -10px;
+    background: none;
 }
 
 footer {
