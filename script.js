@@ -30,6 +30,8 @@ $(document).ready(function() {
     $('.grid-size').text('Grid size: ' + x + 'x' + x);
       
     color();
+    
+    $('html').addClass('blue');
       
   }
   
@@ -43,12 +45,15 @@ $(document).ready(function() {
             $('.grid').each(function(){
                 $(this).css("background-color", '#' + Math.floor(Math.random()*16777215).toString(16));
                 });
-        }, 150)
+        }, 100)
+        $('html').addClass('rainbow');
     }
 
     function stopDance(){
         clearInterval(timer);
         timer = 0;
+        $('html').removeClass('rainbow');
+        $('html').addClass('blue');
     }
 
     function dance(){
