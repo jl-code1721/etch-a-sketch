@@ -10,9 +10,39 @@ $(document).ready(function() {
     
 
   $('#reset').on('click', function() {
-  	var z = prompt("How many squares per side? Definitely don't put more than 200 for anything.");
-    while (z > 200) {
-        z = prompt("I told you, no more than 200.");
+    var lol = true;
+    var lol1 = true;
+  	while (lol) {
+        var z = prompt("How many squares per side? Definitely don't put more than 200 for anything.");
+        
+        if (z > 200 || z < 1) {
+            while (lol1) {
+                z = prompt("Please enter a number between 1 and 200.");
+                if (z < 200 && z > 0) lol1 = false;
+                if (isNaN(z)) {
+                    while (isNaN(z)) {
+                        z = prompt("Please enter a number.");
+                        if (z > 200 || z < 1) {
+                            while (lol1) {
+                                z = prompt("Please enter a number between 1 and 200.");
+                                if (z < 200 && z > 0) lol1 = false;
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            while (isNaN(z)) {
+                z = prompt("Please enter a number.");
+                if (z > 200 || z < 1) {
+                    while (lol1) {
+                        z = prompt("Please enter a number between 1 and 200.");
+                        if (z < 200 && z > 0) lol1 = false;
+                    }
+                }
+            }
+        }
+        lol = false;
     }
       
     clearGrid();

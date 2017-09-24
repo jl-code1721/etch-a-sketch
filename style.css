@@ -136,6 +136,11 @@ ul {
 ul > li {
     display: inline-block;
     margin-right: 10px;
+    transition: 0.3s ease;
+}
+
+li:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 #r {
@@ -178,15 +183,6 @@ ul > li {
 	-webkit-animation:'slide' 5s infinite linear forwards;
     border-radius: 5px;
     padding: 5px;
-}
-
-@keyframes slide{
-  0%{
-    background-position-x: 0%;
-  }
-  100%{
-    background-position-x: 600vw;
-  }
 }
 
 @media screen and (max-width: 700px) {
