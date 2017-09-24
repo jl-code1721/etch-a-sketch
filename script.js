@@ -29,6 +29,8 @@ $(document).ready(function() {
               'background-color' : 'black',
               'opacity' : 0
           });
+          
+          stopDance();
       });
   }
     
@@ -45,7 +47,7 @@ $(document).ready(function() {
   }
     
   function createGrid(x) {
-  	for (var rows = 0; rows < x; rows++) {
+  	for (rows = 0; rows < x; rows++) {
     	for (var columns = 0; columns < x; columns++) {
       	$('#container').append('<div class="grid"></div>');
       };
@@ -67,12 +69,13 @@ $(document).ready(function() {
   }
     
     function startDance(){
-        timer = setInterval(function(){
+            $('.grid').css("opacity", 1);
+            timer = setInterval(function(){
             $('.grid').each(function(){
                 $(this).css("background-color", '#' + Math.floor(Math.random()*16777215).toString(16));
                 });
-        }, 100)
-        $('html').addClass('rainbow');
+            }, 100)
+            $('html').addClass('rainbow');
     }
 
     function stopDance(){
@@ -84,12 +87,11 @@ $(document).ready(function() {
 
     function dance(){
         $('#dance').click(function(){
-            $('.grid').css("opacity", 1);
             if (timer == 0){
                 startDance();
             } else {
                 stopDance();
-            } 
+            }
         })
     }
         

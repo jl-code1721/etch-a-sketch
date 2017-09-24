@@ -50,15 +50,26 @@ h1 {
 }
 
 button {
+    cursor: pointer;
     padding: 10px 30px;
     margin-right: 20px;
     border-radius: 10px;
-    background-color: aqua;
-    border-color: lightgray;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #00e5ff;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #18ffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+button:focus {
+    outline: none;
 }
 
 #desc {
@@ -67,14 +78,6 @@ button {
     width: 600px;
     background: rgba(20, 200, 255, 0.3);
     border-radius: 10px;
-}
-
-#reset:focus {
-    outline: none;
-}
-
-#dance:focus {
-    outline: none;
 }
 
 .grid-size {
@@ -132,7 +135,58 @@ ul {
 
 ul > li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 10px;
+}
+
+#r {
+    background: rgba(255, 0, 0, 0.3);
+    color: rgba(255, 0, 0, 1);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#g {
+    background: rgba(0, 255, 0, 0.3);
+    color: rgba(200, 255, 0, 1);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#b {
+    background: rgba(0, 0, 255, 0.3);
+    color: rgba(0, 0, 255, 1);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#y {
+    background: rgba(255, 200, 0, 0.5);
+    color: rgba(255, 255, 0, 1);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#bl {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#ra {
+    background: repeating-linear-gradient(-45deg,red 0%, yellow 7.14%, rgb(0,255,0) 14.28%, rgb(0,255,255) 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+	background-size:600vw 600vw;
+	-webkit-animation:'slide' 5s infinite linear forwards;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+@keyframes slide{
+  0%{
+    background-position-x: 0%;
+  }
+  100%{
+    background-position-x: 600vw;
+  }
 }
 
 @media screen and (max-width: 700px) {
