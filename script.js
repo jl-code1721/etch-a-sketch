@@ -10,6 +10,10 @@ $(document).ready(function() {
     clear();
     dance();
     stopDanceBtn();
+    
+  $('input').on('click', function() {
+    col = $(this).val();
+  });
 
   $('#reset').on('click', function() {
     var lol = true;
@@ -49,10 +53,8 @@ $(document).ready(function() {
       
     clearGrid();
     createGrid(z);
-  });
-    
-  $('input').on('click', function() {
-      col = $(this).val();
+    col = 'black';
+    document.getElementById("black").checked = document.getElementById("black").defaultChecked;
   });
     
   function stopDanceBtn() {
