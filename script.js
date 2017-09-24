@@ -9,10 +9,7 @@ $(document).ready(function() {
 	createGrid(16);
     clear();
     dance();
-    
-    $('#stopDance').on('click', function() {
-        clearGrid();
-    });
+    stopDanceBtn();
 
   $('#reset').on('click', function() {
     var lol = true;
@@ -57,6 +54,13 @@ $(document).ready(function() {
   $('input').on('click', function() {
       col = $(this).val();
   });
+    
+  function stopDanceBtn() {
+      $('#stopDance').on('click', function() {
+        clearGrid();
+        createGrid(16);
+      });
+  }
     
   function clear() {
       $('#clear').on('click', function() {
