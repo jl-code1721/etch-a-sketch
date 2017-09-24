@@ -5,6 +5,7 @@ $(document).ready(function() {
     var timer;
     
 	createGrid(16);
+    clear();
     dance();
     
 
@@ -21,6 +22,15 @@ $(document).ready(function() {
   $('input').on('click', function() {
       col = $(this).val();
   });
+    
+  function clear() {
+      $('#clear').on('click', function() {
+          $('.grid').css({
+              'background-color' : 'black',
+              'opacity' : 0
+          });
+      });
+  }
     
   function color() {
       $('.grid').mouseover(function() {
@@ -81,17 +91,6 @@ $(document).ready(function() {
                 stopDance();
             } 
         })
-    }
-    
-    function getRandomColor() {
-        
-        col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-        
-//        if (col === 'random') {
-//            col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-//        } else if (col === 'red' || 'green' || 'blue' || 'yellow' || 'black') {
-//            col = col;
-//        }
     }
         
 });
