@@ -1,5 +1,7 @@
 $(document).ready(function() {
     
+    $('#stopDance').fadeOut();
+    
     var col = 'black';
     
     var timer;
@@ -8,12 +10,15 @@ $(document).ready(function() {
     clear();
     dance();
     
+    $('#stopDance').on('click', function() {
+        clearGrid();
+    });
 
   $('#reset').on('click', function() {
     var lol = true;
     var lol1 = true;
   	while (lol) {
-        var z = prompt("How many squares per side? Definitely don't put more than 200 for anything.");
+        var z = prompt("How many squares per side? Definitely don't put more than 200 for anything. Any grid size above 30 will probably lag the page ... in dance mode.");
         
         if (z > 200 || z < 1) {
             while (lol1) {
@@ -99,13 +104,20 @@ $(document).ready(function() {
   }
     
     function startDance(){
-            $('.grid').css("opacity", 1);
-            timer = setInterval(function(){
-            $('.grid').each(function(){
-                $(this).css("background-color", '#' + Math.floor(Math.random()*16777215).toString(16));
-                });
-            }, 100)
-            $('html').addClass('rainbow');
+        $('.grid').css("opacity", 1);
+        timer = setInterval(function(){
+        $('.grid').each(function(){
+            $(this).css("background-color", '#' + Math.floor(Math.random()*16777215).toString(16));
+            });
+        }, 100)
+        $('html').addClass('rainbow');
+        
+        $('#reset').fadeOut();
+        $('#clear').fadeOut();
+        $('#dance').fadeOut();
+        $('h2').fadeOut();
+        $('ul').fadeOut();
+        $('#stopDance').delay(500).fadeIn();
     }
 
     function stopDance(){
@@ -113,7 +125,15 @@ $(document).ready(function() {
         timer = 0;
         $('html').removeClass('rainbow');
         $('html').addClass('blue');
+        
+        $('#stopDance').fadeOut();
+        $('#reset').delay(500).fadeIn();
+        $('#clear').delay(500).fadeIn();
+        $('#dance').delay(500).fadeIn();
+        $('h2').delay(500).fadeIn();
+        $('ul').delay(500).fadeIn();
     }
+    
 
     function dance(){
         $('#dance').click(function(){
