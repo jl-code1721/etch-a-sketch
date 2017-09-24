@@ -16,9 +16,35 @@
         <div class="btn-wrap">
             <button id="reset">Reset</button>
             <button id="dance">Dance</button>
+            <ul>
+                <li>
+                    RED
+                    <input type="radio" name="color-val" value="red">
+                </li>
+                <li>
+                    GREEN
+                    <input type="radio" name="color-val" value="green">
+                </li>
+                <li>
+                    BLUE
+                    <input type="radio" name="color-val" value="blue">
+                </li>
+                <li>
+                    YELLOW
+                    <input type="radio" name="color-val" value="yellow">
+                </li>
+                <li>
+                    BLACK
+                    <input type="radio" name="color-val" value="black" checked>
+                </li>
+                <li>
+                    RANDOM
+                    <input type="radio" name="color-val" value="random">
+                </li>
+            </ul>
         </div>
         
-        <center><p style="margin-top: 20px;">Any grid size above 30 will probably lag the page... in dance mode</p></center>
+        <center><p id="desc">Any grid size above 30 will probably lag the page ... in dance mode</p></center>
         
         <div class="grid-wrap">
         

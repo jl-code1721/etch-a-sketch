@@ -8,7 +8,7 @@
 
 h1 {
     text-align: center;
-    margin: 20px 0 -20px 0;
+    margin: 20px 0;
     font-weight: 300;
 }
 
@@ -41,30 +41,33 @@ h1 {
 }
 
 .btn-wrap {
+    padding: 30px 0;
     margin: 20px auto;
-    width: 250px;
+    width: 600px;
+    background: rgba(20, 200, 255, 0.3);
+    text-align: center;
+    border-radius: 20px;
 }
 
-#reset {
-    margin-top: 50px;
+button {
     padding: 20px 40px;
+    margin-right: 20px;
     border-radius: 10px;
     background-color: aqua;
     border-color: lightgray;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#desc {
+    padding: 10px 0;
+    margin: 20px auto;
+    width: 600px;
+    background: rgba(20, 200, 255, 0.3);
+    border-radius: 10px;
 }
 
 #reset:focus {
     outline: none;
-}
-
-#dance {
-    margin-top: 20px;
-    padding: 20px 40px;
-    border-radius: 10px;
-    background-color: aqua;
-    border-color: lightgray;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 #dance:focus {
@@ -84,12 +87,16 @@ h1 {
 footer {
     width: 100%;
     text-align: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
 }
 
 footer > p {
+    display: inline-block;
+    background: none;
+    position: absolute;
     margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 footer > p > a {
@@ -114,4 +121,20 @@ footer > p > a {
   100%{
     background-position-x: 600vw;
   }
+}
+
+ul {
+    margin: 20px auto 0 auto;
+}
+
+ul > li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    ul > li {
+        float: left;
+        margin: 5px 50% 5px 50%;
+    }
 }

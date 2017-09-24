@@ -1,5 +1,7 @@
 $(document).ready(function() {
     
+    var col = 'black';
+    
     var timer;
     
 	createGrid(16);
@@ -7,14 +9,28 @@ $(document).ready(function() {
     
 
   $('#reset').on('click', function() {
-  	var z = prompt("How many squares per side?");
+  	var z = prompt("How many squares per side? Definitely don't put more than 200 for anything.");
+    while (z > 200) {
+        z = prompt("I told you, no more than 200.");
+    }
+      
     clearGrid();
     createGrid(z);
   });
-  
+    
+  $('input').on('click', function() {
+      col = $(this).val();
+  });
+    
   function color() {
       $('.grid').mouseover(function() {
-  		  $(this).css("opacity", "+=0.15");
+          $(this).css("opacity", "+=0.15");
+          if (col === "random") {
+            $(this).css("background-color", "hsla(" + Math.floor(Math.random()*360).toString() + "," + Math.floor(Math.random()*100).toString() + "%," + 50 + "%, 1)");
+          }
+          else {
+            $(this).css("background-color", col);
+          }
   	  });
   }
     
@@ -66,5 +82,16 @@ $(document).ready(function() {
             } 
         })
     }
-
+    
+    function getRandomColor() {
+        
+        col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+        
+//        if (col === 'random') {
+//            col = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+//        } else if (col === 'red' || 'green' || 'blue' || 'yellow' || 'black') {
+//            col = col;
+//        }
+    }
+        
 });
